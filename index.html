@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Shared tab · Expense splitter</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+  <header><span class="brand">Shared tab</span><span>Small trips. Shared costs.</span></header>
+  <main>
+    <section class="intro"><p class="eyebrow">YOUR GROUP LEDGER</p><h1>Good company.<br>Even accounts.</h1><p>Keep track of who paid, who shared, and what’s left to settle.</p></section>
+    <div id="message" role="status" aria-live="polite"></div>
+    <div class="layout">
+      <div>
+        <section class="card"><h2>The group</h2><ul id="people"></ul><form id="person-form" class="inline"><label class="sr-only" for="name">Participant name</label><input id="name" name="name" placeholder="Add a participant" required maxlength="80"><button>Add</button></form><p class="hint">Remove someone from future expenses; their past spending should stay in the ledger.</p></section>
+        <section class="card"><h2 id="form-heading">Add an expense</h2><form id="expense-form">
+          <label>Description<input name="title" required maxlength="120" placeholder="Dinner, train tickets, groceries…"></label>
+          <div class="fields"><label>Amount (£)<input name="amount" inputmode="decimal" required placeholder="0.00"></label><label>Paid by<select name="payerId" required></select></label></div>
+          <fieldset><legend>Shared by</legend><div id="sharing"></div></fieldset>
+          <button id="save">Add expense</button> <button type="button" id="cancel" class="secondary" hidden>Cancel edit</button>
+        </form></section>
+      </div>
+      <div><section class="card summary"><p class="eyebrow">TOTAL SPENT</p><div id="total" class="total">£0.00</div><h2>Balances</h2><p class="hint">Positive = owed to them. Negative = they owe.</p><ul id="balances"></ul></section><section class="card"><h2>Expenses</h2><div id="expenses"></div></section></div>
+    </div><footer>Stored in this browser. <button id="reset" class="link">Reset demo</button></footer>
+  </main><script type="module" src="/src/app.js"></script>
+</body></html>

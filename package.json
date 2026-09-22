@@ -1,0 +1,12 @@
+{
+  "name": "expense-splitter-detective-round",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "check": "node --check server.js && node --check src/model.js && node --check src/summary.js && node --check src/app.js"
+  }
+}
